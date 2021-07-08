@@ -1,0 +1,488 @@
+<header id="header">
+    <div class="header__wrap">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__main">
+                    <div class="header__logo logo">
+                        <div class="logo__wrap"></div>
+                    </div>
+                    <div class="header__menu menu">
+                        <nav class="menu__wrap">
+                            <ul class="menu__list">
+                                <li class="menu__item">
+                                    <div class="menu__item-control">
+                                        <a class="menu__link" href="#">Lorem</a>
+                                        <button data-spoller type="button" class="menu__arrow icon-arrow-down"></button>
+                                    </div>
+                                    <ul class="menu__sub-list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#"> Lorem 1</a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#"> Lorem 2</a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#"> Lorem 3</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="#">Lorem</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="#">Lorem</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="#">Lorem</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <ul class="header__language language">
+                            <li class="menu__item language__wrap">
+                                <div class="menu__item-control">
+                                    <a class="menu__link" href="#">En</a>
+                                    <button data-spoller type="button" class="menu__arrow icon-arrow-down"></button>
+                                </div>
+                                <ul class="menu__sub-list language__sub-list">
+                                    <li class="menu__sub-item language__sub-item">
+                                        <a class="menu__sub-link language__sub-link" href="#"> Rus</a>
+                                    </li>
+                                    <li class="menu__sub-item language__sub-item">
+                                        <a class="menu__sub-link language__sub-link" href="#"> Du</a>
+                                    </li>
+                                    <li class="menu__sub-item language__sub-item">
+                                        <a class="menu__sub-link language__sub-link" href="#"> Fr</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+<!--                 <div class="header__search">
+                    <div class="search-form">
+                        <button type="button" class="search-form__icon icon-search"></button>
+                        <form action="#">
+                            <button type="submit" class="search-form__btn icon-search"></button>
+                            <input autocomplete="off" type="text" name="form[]" placeholder="Поиск"> 
+                        </form>
+                    </div>
+                </div>
+                <div class="header__actions actions-header">
+                    <a href="#" class="icon-geo"></a>
+                    <a href="#" class="icon-pacman"></a>
+                    <div class="actions-header__item cart-header">
+                        <a href="#" class="cart-header__icon icon-cart"></a>
+                        <div class="cart-header__wrap">
+                            <ul class="cart-header__list cart-list"></ul>
+                        </div>
+                    </div>
+                    <a href="#" class="actions-header__item user-img"></a>
+                </div> -->
+                <button class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+ </header>
+ 
+ 
+ 
+ 
+ .body_lock{
+    overflow: hidden;
+}
+
+#header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    
+    button{
+        outline: none;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+.header__wrap{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    background-color: palegoldenrod;
+}
+
+.header__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    min-height: 100px;
+}
+
+/* //////////////////////////first block header */
+
+.header__main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header__logo{
+    @include adaptiv-vaule("margin-right", 50, 20, 1);
+}
+
+/* .logo{
+
+} */
+
+.logo__wrap{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #000;
+    position: relative;
+    z-index: 5;
+}
+
+/* -------------menu */
+
+/* .header__menu {
+    
+} */
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @include media('<=tablet'){
+        position: relative;
+        z-index: -1;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        top: -100%;
+        left: 0;
+        background-color: palegoldenrod;
+        padding: 100px 15px 30px 15px;
+        transition: all .5s ease 0s;
+        display: flex;
+        flex-direction: column;
+
+        &::before{
+            content:'';
+            position: fixed;
+            width: 100%;
+            height: 100px;
+            top: 0;
+            left: 0;
+            transition: all .3s ease 0s;
+            background-color: palegoldenrod;
+            z-index: 2;
+        }
+    }
+}
+
+.menu_active{
+    @include media('<=tablet'){
+        top: 0;
+    }
+}
+
+.menu__list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @include media('>tablet'){
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.menu__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px;
+    padding: 5px 0;
+    position: relative;
+
+    @media (any-hover: hover) { /* ховер только на устройствах с мышью */
+        &:hover{
+            .menu__sub-list{
+                transform: translate(0, 0);
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+            .menu__arrow{
+                transform: rotate(210deg);
+                color: orange;
+            }
+
+            .menu__link{
+                color: orange;
+            }
+        }
+    }
+
+    @include media('>tablet'){ /* открытие sub-menu на устройствах с tach на разрешении више tablet */
+        &._hover {
+            .menu__sub-list{
+                transform: translate(0, 0);
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+            .menu__arrow{
+                transform: rotate(210deg);
+                color: orange;
+            }
+
+            .menu__link{
+                color: orange;
+            }
+        }
+    }
+
+    @include media('<=tablet'){
+        flex-direction: column;
+
+        &._hover {
+            .menu__sub-list{
+                transform: translate(0, 0);
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                position: relative;
+            }
+
+            .menu__arrow{
+                transform: rotate(210deg);
+                color: orange;
+            }
+
+            .menu__link{
+                color: orange;
+            }
+        }
+    }
+}
+
+.menu__item-control{
+    @include media('<=tablet'){
+        position: relative;
+    }
+}
+
+.menu__link{
+    transition: color .3s ease 0s;
+    font-size: 20px;
+}
+
+.menu__arrow {
+    margin-left: 5px;
+    transition: all .3s ease 0s;
+    font-size: 14px;
+
+    @include media('<=tablet'){
+        position: absolute;
+        top: 5px;
+    }
+}
+
+/* -------------sub-menu */
+
+.menu__sub-list{
+    padding: 15px;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    background-color: orange;
+    flex: 1 1 100%;
+
+    @include media('>tablet'){
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease 0s;
+        transform: translate(0, 10px);
+        min-width: 150px;
+        top: 100%;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    @include media('<=tablet'){
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease 0s;
+        transform: translate(0, 10px);
+        min-width: 150px;
+        position: absolute;
+        pointer-events: none;
+    }
+}
+
+.menu__sub-item{
+    &:not(:last-child){
+        margin-bottom: 10px;
+        position: relative;
+
+        &::after{
+            content:'';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 1px;
+            background-color: white;
+        }
+    }
+}
+
+/* .menu__sub-link{
+
+} */
+
+/* ---------------language */
+
+.language{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* .language__wrap{
+
+} */
+
+.language__sub-list{
+    min-width: 100%;
+}
+
+/* .language__sub-item{
+
+} */
+
+/* .language__sub-link{
+
+} */
+
+
+/* ---------------burger */
+
+.burger{
+    display: none;
+    position: relative;
+    width: 25px;
+    height: 15px;
+
+    @include media('<=tablet'){
+        display: block;
+    }
+
+    span{
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: orange;
+        top: 50%;
+        left: 0;
+        border-radius: 10px;
+        transition: all .3s ease 0s;
+
+        &:first-child{
+            top: 0;
+        }
+
+        &:last-child{
+            top: 100%;
+        }
+    }
+}
+
+.burger_active{
+
+    span{
+        opacity: 0;
+
+
+        &:first-child{
+            opacity: 1;
+            transform: rotate(-45deg);
+            top: 6px;
+        }
+
+        &:last-child{
+            opacity: 1;
+            transform: rotate(45deg);
+            top: 6px;
+        }
+    }
+}
+
+
+
+
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+    },
+    any: function() {
+        return (
+            isMobile.Android() ||
+            isMobile.BlackBerry() ||
+            isMobile.iOS() ||
+            isMobile.Opera() ||
+            isMobile.Windows());
+    }
+};
+
+window.onload = function () {
+    document.addEventListener("click", documentActions);
+
+    function documentActions(e) {
+        const targetElement = e.target;
+        if (window.innerWidth < 5000 && isMobile.any()) {
+            if (targetElement.classList.contains('menu__arrow')) {
+                targetElement.closest('.menu__item').classList.toggle('_hover')
+            }
+        }
+    }
+};
+
+const burger = document.querySelector(".burger");
+if (burger) {
+  const menuBody = document.querySelector(".menu");
+  burger.addEventListener("click", function (e) {
+    document.body.classList.toggle("body_lock");
+    burger.classList.toggle("burger_active");
+    menuBody.classList.toggle("menu_active");
+  });
+}
